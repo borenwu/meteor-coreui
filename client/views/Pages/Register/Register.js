@@ -14,6 +14,7 @@ class Register extends Component {
     }
 
     handleUp(){
+        console.log('up')
         const company = ReactDOM.findDOMNode(this.refs.company).value.trim();
         const username = ReactDOM.findDOMNode(this.refs.username).value.trim();
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim();
@@ -28,6 +29,8 @@ class Register extends Component {
                     console.log('create new user')
                     Meteor.logout()
                     this.context.router.history.push("/login");
+                }else{
+                    console.log(err)
                 }
             })
         }
